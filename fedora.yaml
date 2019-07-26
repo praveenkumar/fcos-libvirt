@@ -1,0 +1,11 @@
+variant: fcos
+version: 1.0.0
+passwd:
+  users:
+    - name: core
+      password_hash: $y$j9T$dahelkQ2GUy2EfzW4Qu/m/$eApizQ.vHFyGJRel.1wNbKd8PLZ5soT0vBiIp4ieBM1
+      groups:
+        - wheel
+        - podman
+  groups:
+    - name: podman

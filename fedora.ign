@@ -1,0 +1,1 @@
+{"ignition":{"config":{"replace":{"source":null,"verification":{}}},"security":{"tls":{}},"timeouts":{},"version":"3.0.0"},"passwd":{"groups":[{"name":"podman"}],"users":[{"groups":["wheel","podman"],"name":"core","passwordHash":"$y$j9T$dahelkQ2GUy2EfzW4Qu/m/$eApizQ.vHFyGJRel.1wNbKd8PLZ5soT0vBiIp4ieBM1"}]},"storage":{},"systemd":{}}
