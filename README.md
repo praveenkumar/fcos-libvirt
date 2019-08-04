@@ -1,5 +1,7 @@
 # Run Fedora CoreOS using virsh/libvirt
 
+[![asciicast](https://asciinema.org/a/260843.svg)](https://asciinema.org/a/260843)
+
 ## How to use?
 
 ```shell
