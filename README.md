@@ -9,10 +9,10 @@ $ ./run_fcos.sh -h
 run_fcos.sh [[create | start | stop | delete] | [-h]]
 
 where:
-    create - Create the cluster resources
-    start  - Start the cluster
-    stop   - Stop the cluster
-    delete - Delete the cluster
+    create - Create the fcos resources
+    start  - Start the fcos vm
+    stop   - Stop the fcos vm
+    delete - Delete the fcos vm
     -h     - Usage message
 
 $ ./run_fcos.sh create
