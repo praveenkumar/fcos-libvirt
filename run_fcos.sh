@@ -19,9 +19,10 @@ prerequisites()
     if [ ! -f fedora-coreos.qcow2 ]; then
 	local fcos_uri=$(curl -L https://builds.coreos.fedoraproject.org/streams/testing.json | jq -r '.architectures.x86_64.artifacts.qemu.formats."qcow2.xz".disk.location')
 	local tarball=$(basename $fcos_uri)
+	local file_name=$(basename $fcos_uri .xz)
 	curl -L -O $fcos_uri
 	unxz -d $tarball
-	mv $tarball fedora-coreos.qcow2
+	mv $file_name fedora-coreos.qcow2
     fi
 
     # Start the libvirtd service
