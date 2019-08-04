@@ -13,13 +13,15 @@ prerequisites()
     fi
 
     # Install required dependecies
-    sudo yum install -y libvirt libvirt-devel libvirt-daemon-kvm qemu-kvm
+    sudo yum install -y libvirt libvirt-devel libvirt-daemon-kvm qemu-kvm jq
     
     # Download the fedora coreos image if not available
     if [ ! -f fedora-coreos.qcow2 ]; then
-	curl -L -O https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/30.20190725.0/x86_64/fedora-coreos-30.20190725.0-qemu.qcow2.xz
-	unxz -d fedora-coreos-30.20190725.0-qemu.qcow2.xz
-	mv fedora-coreos-30.20190725.0-qemu.qcow2 fedora-coreos.qcow2
+	local fcos_uri=$(curl -L https://builds.coreos.fedoraproject.org/streams/testing.json | jq -r '.architectures.x86_64.artifacts.qemu.formats."qcow2.xz".disk.location')
+	local tarball=$(basename $fcos_uri)
+	curl -L -O $fcos_uri
+	unxz -d $tarball
+	mv $tarball fedora-coreos.qcow2
     fi
 
     # Start the libvirtd service
